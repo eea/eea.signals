@@ -70,7 +70,7 @@
                                        ">
                         <li>
                             <span class="panel-overlay" tal:content="item_description">[item_description]</span>
-                            <img tal:attributes="src string:${item_absolute_url}/image" />
+                            <img tal:attributes="src string:${item_absolute_url}/image_large" />
                         </li>
                     </tal:block>
                 </tal:entry>
