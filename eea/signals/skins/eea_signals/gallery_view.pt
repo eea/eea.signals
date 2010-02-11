@@ -89,18 +89,6 @@
         </metal:listingmacro>
 
         <metal:subtopics use-macro="here/atct_topic_view/macros/folderlisting_macro" />
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('#galleryView').galleryView({
-                    panel_width: 800,
-                    panel_height: 300,
-                    frame_width: 50,
-                    frame_height: 50,
-                    transition_speed: 350,
-                    transition_interval: 0
-                });
-            });
-        </script>
     </metal:main-macro>
     </div>
 
