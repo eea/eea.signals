@@ -4,6 +4,8 @@ Changelog
 0.2 (Unreleased)
 ----------------
 
+ - Link to previous signal reports [thuliper, #3010]
+
 0.1 (2010-02-16)
 ----------------
 
