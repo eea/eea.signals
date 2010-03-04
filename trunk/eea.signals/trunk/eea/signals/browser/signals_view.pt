@@ -43,7 +43,7 @@
             <h2>Eyewitness stories</h2>
             <div tal:define="folderContents python:here.restrictedTraverse('galleries').getFolderContents({'portal_type': ['EyewitnessStory']})">
                 <div class="photoAlbumEntry" tal:repeat="item folderContents">
-                    <a tal:attributes="href item/getURL; title item/Description">
+                    <a class="gallery-fancybox" tal:attributes="href item/getURL; title item/Description">
                         <span class="photoAlbumEntryWrapper">
                             <img tal:attributes="src string:${item/getURL}/image_thumb"/>
                         </span>

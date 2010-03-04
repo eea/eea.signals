@@ -4,6 +4,7 @@ Changelog
 0.2 (Unreleased)
 ----------------
 
+ - Eyewitness stories opens in fancybox [thuliper, #3008]
  - Link to previous signal reports [thuliper, #3010]
 
 0.1 (2010-02-16)
