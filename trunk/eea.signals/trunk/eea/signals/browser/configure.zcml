@@ -3,7 +3,7 @@
 
   <browser:page
     for=".interfaces.ISignalsView"
-    name="signals_view.html"
+    name="signals_view"
     class=".signals_view.SignalsView"
     template="signals_view.pt"
     permission="zope.Public"
