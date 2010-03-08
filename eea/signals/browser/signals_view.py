@@ -37,7 +37,7 @@ class SignalsView(BrowserView):
         return ret
 
     def get_chapters(self):
-        folder = self.context.restrictedTraverse('chapters')
+        folder = self.context.restrictedTraverse('chapters').getTranslations()[self.request['LANGUAGE']][0]
         contents = []
         for brain in folder.getFolderContents({'portal_type': ['Article']}):
             contents.append({
@@ -53,7 +53,7 @@ class SignalsView(BrowserView):
         }
 
     def get_eyewitness_stories(self):
-        folder = self.context.restrictedTraverse('galleries')
+        folder = self.context.restrictedTraverse('galleries').getTranslations()[self.request['LANGUAGE']][0]
         contents = []
         for brain in folder.getFolderContents({'portal_type': ['EyewitnessStory']}):
             contents.append({
