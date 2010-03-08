@@ -4,6 +4,7 @@ Changelog
 0.2 (Unreleased)
 ----------------
 
+ - Use folders for articles/eyewitness sections so that it's easier to translate [thuliper, #3041]
  - New Eyewitness story icon for CMS [thuliper]
  - Eyewitness stories opens in fancybox [thuliper, #3008]
  - Link to previous signal reports [thuliper, #3010]
