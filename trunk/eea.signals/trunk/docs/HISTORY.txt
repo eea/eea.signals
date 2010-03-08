@@ -4,6 +4,9 @@ Changelog
 0.3 (Unreleased)
 ----------------
 
+ - List old articles (related to http://eea.europa.eu/publications/signals-2009) [thuliper]
+ - Use translated objects for 'chapters' and 'galleries' folders so that these does not have to be named the same [thuliper]
+
 0.2 (2010-03-08)
 ----------------
 
