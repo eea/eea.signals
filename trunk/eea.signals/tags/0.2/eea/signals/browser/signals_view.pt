@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+    <div metal:fill-slot="main">
+    <metal:main-macro define-macro="main">
+        <h1 tal:content="object_title" class="documentFirstHeading">
+            Title or id
+        </h1>
+
+        <div metal:use-macro="here/document_actions/macros/document_actions">
+            Document actions (print, sendto etc)
+        </div>
+
+        <div class="visualClear"></div>
+
+        <p class="documentDescription"
+           tal:content="here/Description"
+           tal:condition="here/Description">
+            Description
+        </p>
+
+        <div class="visualClear"></div>
+
+        <div class="signals-section" tal:define="chapters view/get_chapters">
+            <h2 tal:content="chapters/folder_title">Articles</h2>
+            <p tal:content="chapters/folder_description"></p>
+            <div tal:define="folderContents chapters/contents">
+                <div class="photoAlbumEntry" tal:repeat="item folderContents">
+                    <a tal:attributes="href item/url; title item/description">
+                        <span class="photoAlbumEntryWrapper">
+                            <img tal:attributes="src string:${item/url}/image_thumb"/>
+                        </span>
+                        <span class="photoAlbumEntryTitle" tal:content="item/description"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="visualClear"></div>
+        </div>
+
+        <div class="signals-section" tal:define="stories view/get_eyewitness_stories">
+            <h2 tal:content="stories/folder_title">Eyewitness stories</h2>
+            <p tal:content="stories/folder_description"></p>
+            <div tal:define="folderContents stories/contents">
+                <div class="photoAlbumEntry photoAlbumFolder" tal:repeat="item folderContents">
+                    <a tal:attributes="href item/url; title item/title">
+                        <span class="photoAlbumEntryWrapper">
+                            <img tal:attributes="src string:${item/url}/image_thumb"/>
+                        </span>
+                        <span class="photoAlbumEntryTitle" tal:content="item/description"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="visualClear"></div>
+        </div>
+
+        <div class="signals-section">
+            <h2 i18n:translate="archive">Archive</h2>
+            <div tal:define="folderContents view/get_old_reports">
+                <div class="photoAlbumEntry" tal:repeat="item folderContents">
+                    <a tal:attributes="href item/getURL; title item/Description">
+                        <span class="photoAlbumEntryWrapper">
+                            <img tal:attributes="src string:${item/getURL}/image_thumb"/>
+                        </span>
+                        <span class="photoAlbumEntryTitle" tal:content="item/Title"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="visualClear"></div>
+        </div>
+
+        <div class="signals-section">
+            <h2 i18n:translate="More">More</h2>
+            <ul tal:define="more view/get_more_info_document">
+                <li>
+                   <a tal:condition="more"
+                      tal:attributes="href more/url"
+                      tal:content="more/title">
+                          What is signals?
+                   </a>
+               </li>
+            </ul>
+        </div>
+
+    </metal:main-macro>
+    </div>
+</body>
+</html>
