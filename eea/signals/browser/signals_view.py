@@ -8,8 +8,7 @@ class SignalsView(BrowserView):
     """ View to use within signals_view template.
     """
 
-    @property
-    def old_reports(self):
+    def get_old_reports(self):
         now = DateTime()
         catalog = getToolByName(self.context, 'portal_catalog')
         return catalog({
@@ -21,12 +20,43 @@ class SignalsView(BrowserView):
             'sort_order' : 'reverse',
         })
 
-    @property
-    def more_info_document(self):
-        obj = self.context.restrictedTraverse('more')
+    def get_chapters(self):
+        folder = self.context.restrictedTraverse('chapters')
+        contents = []
+        for brain in folder.getFolderContents({'portal_type': ['Article']}):
+            contents.append({
+                'title': brain.Title,
+                'description': brain.Description,
+                'url': brain.getURL(),
+            })
         return {
-            'title': obj.getTitle(),
-            'description': obj.getDescription(),
+            'folder_title': folder.Title(),
+            'folder_description': folder.Description(),
+            'folder_url': folder.absolute_url(),
+            'contents': contents,
+        }
+
+    def get_eyewitness_stories(self):
+        folder = self.context.restrictedTraverse('galleries')
+        contents = []
+        for brain in folder.getFolderContents({'portal_type': ['EyewitnessStory']}):
+            contents.append({
+                'title': brain.Title,
+                'description': brain.Description,
+                'url': brain.getURL(),
+            })
+        return {
+            'folder_title': folder.Title(),
+            'folder_description': folder.Description(),
+            'folder_url': folder.absolute_url(),
+            'contents': contents,
+        }
+
+    def get_more_info_document(self):
+        obj = self.context.restrictedTraverse('what-is-signals')
+        return {
+            'title': obj.Title(),
+            'description': obj.Description(),
             'url': obj.absolute_url(),
         }
 

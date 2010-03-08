@@ -24,30 +24,32 @@
 
         <div class="visualClear"></div>
 
-        <div class="signals-section">
-            <h2 i18n:translate="Articles">Articles</h2>
-            <div tal:define="folderContents python:here.restrictedTraverse('chapters').getFolderContents({'portal_type': ['Article']})">
+        <div class="signals-section" tal:define="chapters view/get_chapters">
+            <h2 tal:content="chapters/folder_title">Articles</h2>
+            <p tal:content="chapters/folder_description"></p>
+            <div tal:define="folderContents chapters/contents">
                 <div class="photoAlbumEntry" tal:repeat="item folderContents">
-                    <a tal:attributes="href item/getURL; title item/Description">
+                    <a tal:attributes="href item/url; title item/description">
                         <span class="photoAlbumEntryWrapper">
-                            <img tal:attributes="src string:${item/getURL}/image_thumb"/>
+                            <img tal:attributes="src string:${item/url}/image_thumb"/>
                         </span>
-                        <span class="photoAlbumEntryTitle" tal:content="item/Description"></span>
+                        <span class="photoAlbumEntryTitle" tal:content="item/description"></span>
                     </a>
                 </div>
             </div>
             <div class="visualClear"></div>
         </div>
 
-        <div class="signals-section">
-            <h2 i18n:translate="Eyewitness stories">Eyewitness stories</h2>
-            <div tal:define="folderContents python:here.restrictedTraverse('galleries').getFolderContents({'portal_type': ['EyewitnessStory']})">
+        <div class="signals-section" tal:define="stories view/get_eyewitness_stories">
+            <h2 tal:content="stories/folder_title">Eyewitness stories</h2>
+            <p tal:content="stories/folder_description"></p>
+            <div tal:define="folderContents stories/contents">
                 <div class="photoAlbumEntry photoAlbumFolder" tal:repeat="item folderContents">
-                    <a class="gallery-fancybox" tal:attributes="href item/getURL; title item/Description">
+                    <a tal:attributes="href item/url; title item/title">
                         <span class="photoAlbumEntryWrapper">
-                            <img tal:attributes="src string:${item/getURL}/image_thumb"/>
+                            <img tal:attributes="src string:${item/url}/image_thumb"/>
                         </span>
-                        <span class="photoAlbumEntryTitle" tal:content="item/Title"></span>
+                        <span class="photoAlbumEntryTitle" tal:content="item/description"></span>
                     </a>
                 </div>
             </div>
@@ -56,7 +58,7 @@
 
         <div class="signals-section">
             <h2 i18n:translate="archive">Archive</h2>
-            <div tal:define="folderContents view/old_reports">
+            <div tal:define="folderContents view/get_old_reports">
                 <div class="photoAlbumEntry" tal:repeat="item folderContents">
                     <a tal:attributes="href item/getURL; title item/Description">
                         <span class="photoAlbumEntryWrapper">
@@ -71,10 +73,11 @@
 
         <div class="signals-section">
             <h2 i18n:translate="More">More</h2>
-            <ul tal:define="more python:here.get('what-is-signals', None)">
+            <ul tal:define="more view/get_more_info_document">
                 <li>
                    <a tal:condition="more"
-                      tal:attributes="href string:${here/absolute_url}/more">
+                      tal:attributes="href more/url"
+                      tal:content="more/title">
                           What is signals?
                    </a>
                </li>
