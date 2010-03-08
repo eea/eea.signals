@@ -20,6 +20,22 @@ class SignalsView(BrowserView):
             'sort_order' : 'reverse',
         })
 
+    def get_old_articles(self):
+        portal_url = getToolByName(self.context, 'portal_url')
+        portal = portal_url.getPortalObject()
+        try:
+            article = portal.restrictedTraverse('/SITE/publications/signals-2009')
+        except:
+            return None
+        ret = {}
+        for obj in article.getRelatedItems():
+            ret.append({
+                'title': obj.Title(),
+                'description': obj.Description(),
+                'url': obj.absolute_url(),
+            })
+        return ret
+
     def get_chapters(self):
         folder = self.context.restrictedTraverse('chapters')
         contents = []
