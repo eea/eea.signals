@@ -1,7 +1,10 @@
 from setuptools import setup, find_packages
 import os
+from os.path import join
 
-version = '0.1'
+name = 'eea.signals'
+path = name.split('.') + ['version.txt']
+version = open(join(*path)).read().strip()
 
 setup(name='eea.signals',
       version=version,
