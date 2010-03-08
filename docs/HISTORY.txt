@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2 (Unreleased)
+0.2 (2010-03-08)
 ----------------
 
  - Use folders for articles/eyewitness sections so that it's easier to translate [thuliper, #3041]
