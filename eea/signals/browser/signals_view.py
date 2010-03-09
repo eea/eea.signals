@@ -69,7 +69,10 @@ class SignalsView(BrowserView):
         }
 
     def get_more_info_document(self):
-        obj = self.context.restrictedTraverse('what-is-signals').getTranslations()[self.request['LANGUAGE']][0]
+        try:
+            obj = self.context.restrictedTraverse('what-is-signals').getTranslations()[self.request['LANGUAGE']][0]
+        except:
+            return None
         return {
             'title': obj.Title(),
             'description': obj.Description(),
