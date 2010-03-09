@@ -6,19 +6,25 @@ from DateTime import DateTime
 
 class SignalsView(BrowserView):
     """ View to use within signals_view template.
+
+    This view expects a few folders and smartfolders to be set up:
+    1. a folder w/ id 'chapters'
+    2. a folder w/ id 'galleries'
+    3. a smartfolder w/ id 'old-reports'
+    4. a document/page/item w/ id 'what-is-signals'
     """
 
     def get_old_reports(self):
-        now = DateTime()
-        catalog = getToolByName(self.context, 'portal_catalog')
-        return catalog({
-            'object_provides': 'eea.reports.interfaces.IReportContainerEnhanced',
-            'review_state': 'published',
-            'publication_groups': (u'environmental_assessment_report_2002_9',),
-            'effectiveRange': now,
-            'sort_on': 'effective',
-            'sort_order' : 'reverse',
-        })
+        try:
+            smartfolder = self.context.restrictedTraverse('old-reports').getTranslations()[self.request['LANGUAGE']][0]
+        except:
+            return None
+        return {
+            'folder_title': smartfolder.Title(),
+            'folder_description': smartfolder.Description(),
+            'folder_url': smartfolder.absolute_url(),
+            'contents': smartfolder.queryCatalog(),
+        }
 
     def get_old_articles(self):
         portal_url = getToolByName(self.context, 'portal_url')
