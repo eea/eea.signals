@@ -11,7 +11,8 @@ class SignalsView(BrowserView):
     1. a folder w/ id 'chapters'
     2. a folder w/ id 'galleries'
     3. a smartfolder w/ id 'old-reports'
-    4. a document/page/item w/ id 'what-is-signals'
+    4. a smartfolder w/ id 'old-articles'
+    5. a document/page/item w/ id 'what-is-signals'
     """
 
     def get_old_reports(self):
@@ -27,20 +28,17 @@ class SignalsView(BrowserView):
         }
 
     def get_old_articles(self):
-        portal_url = getToolByName(self.context, 'portal_url')
-        portal = portal_url.getPortalObject()
         try:
-            article = portal.restrictedTraverse('/SITE/publications/signals-2009')
+            smartfolder = self.context.restrictedTraverse('old-articles').getTranslations()[self.request['LANGUAGE']][0]
         except:
             return None
-        ret = {}
-        for obj in article.getRelatedItems():
-            ret.append({
-                'title': obj.Title(),
-                'description': obj.Description(),
-                'url': obj.absolute_url(),
-            })
-        return ret
+        return {
+            'folder_title': smartfolder.Title(),
+            'folder_description': smartfolder.Description(),
+            'folder_url': smartfolder.absolute_url(),
+            'contents': smartfolder.queryCatalog(),
+        }
+
 
     def get_chapters(self):
         folder = self.context.restrictedTraverse('chapters').getTranslations()[self.request['LANGUAGE']][0]
