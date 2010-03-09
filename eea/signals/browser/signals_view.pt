@@ -57,9 +57,10 @@
             <div class="visualClear"></div>
         </div>
 
-        <div class="signals-section">
-            <h2 i18n:translate="archive">Archive</h2>
-            <div tal:define="folderContents view/get_old_reports">
+        <div class="signals-section" tal:define="old_reports view/get_old_reports">
+            <h2 tal:content="old_reports/folder_title">Old reports</h2>
+            <p content="old_reports/folder_description"></p>
+            <div tal:define="folderContents old_reports/contents">
                 <div class="photoAlbumEntry" tal:repeat="item folderContents">
                     <a tal:attributes="href item/getURL; title item/Description">
                         <span class="photoAlbumEntryWrapper">
