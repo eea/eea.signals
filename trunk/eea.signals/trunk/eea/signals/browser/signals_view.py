@@ -16,8 +16,9 @@ class SignalsView(BrowserView):
     """
 
     def _get_translated_item(self, name):
+        context = self.context
         try:
-            return self.context.getCanonical().restrictedTraverse(name).getTranslations()[self.request['LANGUAGE']][0]
+            return context.getCanonical().restrictedTraverse(name).getTranslations()[context.Language()][0]
         except:
             return None
 
