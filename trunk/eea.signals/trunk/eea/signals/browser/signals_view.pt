@@ -90,7 +90,7 @@
         </div>
 
         <div class="signals-section">
-            <h2 i18n:translate="More">More</h2>
+            <h2 i18n:translate="box_morelink">More</h2>
             <ul tal:define="more view/get_more_info_document">
                 <li>
                    <a tal:condition="more"
