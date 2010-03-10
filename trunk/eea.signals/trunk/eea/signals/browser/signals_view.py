@@ -15,33 +15,38 @@ class SignalsView(BrowserView):
     5. a document/page/item w/ id 'what-is-signals'
     """
 
-    def get_old_reports(self):
+    def _get_translated_item(self, name):
         try:
-            smartfolder = self.context.restrictedTraverse('old-reports').getTranslations()[self.request['LANGUAGE']][0]
+            return self.context.getCanonical().restrictedTraverse(name).getTranslations()[self.request['LANGUAGE']][0]
         except:
             return None
+
+    def get_old_reports(self):
+        folder = self._get_translated_item('old-reports')
+        if folder == None:
+            return None
         return {
-            'folder_title': smartfolder.Title(),
-            'folder_description': smartfolder.Description(),
-            'folder_url': smartfolder.absolute_url(),
-            'contents': smartfolder.queryCatalog(),
+            'folder_title': folder.Title(),
+            'folder_description': folder.Description(),
+            'folder_url': folder.absolute_url(),
+            'contents': folder.queryCatalog(),
         }
 
     def get_old_articles(self):
-        try:
-            smartfolder = self.context.restrictedTraverse('old-articles').getTranslations()[self.request['LANGUAGE']][0]
-        except:
+        folder = self._get_translated_item('old-articles')
+        if folder == None:
             return None
         return {
-            'folder_title': smartfolder.Title(),
-            'folder_description': smartfolder.Description(),
-            'folder_url': smartfolder.absolute_url(),
-            'contents': smartfolder.queryCatalog(),
+            'folder_title': folder.Title(),
+            'folder_description': folder.Description(),
+            'folder_url': folder.absolute_url(),
+            'contents': folder.queryCatalog(),
         }
 
-
     def get_chapters(self):
-        folder = self.context.restrictedTraverse('chapters').getTranslations()[self.request['LANGUAGE']][0]
+        folder = self._get_translated_item('chapters')
+        if folder == None:
+            return None
         contents = []
         for brain in folder.getFolderContents({'portal_type': ['Article']}):
             contents.append({
@@ -57,7 +62,9 @@ class SignalsView(BrowserView):
         }
 
     def get_eyewitness_stories(self):
-        folder = self.context.restrictedTraverse('galleries').getTranslations()[self.request['LANGUAGE']][0]
+        folder = self._get_translated_item('galleries')
+        if folder == None:
+            return None
         contents = []
         for brain in folder.getFolderContents({'portal_type': ['EyewitnessStory']}):
             contents.append({
@@ -73,13 +80,12 @@ class SignalsView(BrowserView):
         }
 
     def get_more_info_document(self):
-        try:
-            obj = self.context.restrictedTraverse('what-is-signals').getTranslations()[self.request['LANGUAGE']][0]
-        except:
+        doc = self._get_translated_item('what-is-signals')
+        if doc == None:
             return None
         return {
-            'title': obj.Title(),
-            'description': obj.Description(),
-            'url': obj.absolute_url(),
+            'title': doc.Title(),
+            'description': doc.Description(),
+            'url': doc.absolute_url(),
         }
 
