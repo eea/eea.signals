@@ -33,8 +33,7 @@
                         <span class="photoAlbumEntryWrapper">
                             <img tal:attributes="src string:${item/url}/image_thumb"/>
                         </span>
-                        <span tal:condition="item/description" class="photoAlbumEntryTitle" tal:content="structure string:${item/title} &mdash; ${item/description}"></span>
-                        <span tal:condition="not: item/description" class="photoAlbumEntryTitle" tal:content="item/title"></span>
+                        <span class="photoAlbumEntryTitle" tal:content="item/title"></span>
                     </a>
                 </div>
             </div>
