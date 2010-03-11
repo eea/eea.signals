@@ -9,4 +9,12 @@
     permission="zope.Public"
     />
 
+  <browser:page
+    for="*"
+    name="subfolder_view"
+    class=".subfolder_view.SubFolderView"
+    template="subfolder_view.pt"
+    permission="zope.Public"
+    />
+
 </configure>
