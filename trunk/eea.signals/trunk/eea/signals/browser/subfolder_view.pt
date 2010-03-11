@@ -5,7 +5,7 @@
 
 <body>
     <div metal:fill-slot="main">
-    <metal:main-macro define-macro="main">
+    <metal:main-macro define-macro="main" tal:define="folder_contents view/folder_contents">
         <h1 tal:content="object_title" class="documentFirstHeading">
             Title or id
         </h1>
@@ -24,7 +24,7 @@
 
         <div class="visualClear"></div>
                                   
-        <div tal:repeat="folder view/subfolders">
+        <div tal:repeat="folder folder_contents/folderish">
             <h2 tal:content="folder/title">Articles</h2>
             <p tal:content="folder/description"></p>
             <div tal:define="folderContents folder/contents">
@@ -45,10 +45,9 @@
         <div>
             <h2 i18n:translate="box_morelink">More</h2>
             <ul>
-                <li tal:repeat="item view/nonfolders">
-                   <a tal:attributes="href item/url"
-                      tal:content="item/title">
-                          Title 
+                <li tal:repeat="item folder_contents/nonfolderish">
+                   <a tal:attributes="href item/url" tal:content="item/title">
+                      Title 
                    </a>
                </li>
             </ul>
