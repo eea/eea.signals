@@ -22,24 +22,14 @@ class SubFolderView(BrowserView):
     @property
     def folder_contents(self):
         """Get the folderish items in cachable list/dict format"""
-        ret = {
-            'folderish': [],
-            'nonfolderish': [],
-        }
+        ret = []
         for brain in self.context.getFolderContents():
             if brain.portal_type in ['Folder', 'Topic', 'RichTopic']:
-                ret['folderish'].append({
+                ret.append({
                     'title': brain.Title,
                     'description': brain.Description,
                     'url': brain.getURL(),
                     'portal_type': brain.portal_type,
                     'contents': _get_contents(brain),
                 })
-            else:
-                ret['nonfolderish'].append({
-                    'title': brain.Title,
-                    'description': brain.Description,
-                    'url': brain.getURL(),
-                    'portal_type': brain.portal_type,
-                })
-        return res
+        return ret
