@@ -4,6 +4,7 @@ Changelog
 0.3 (Unreleased)
 ----------------
 
+ - Include copyright in gallery view images if there is one [thuliper, #3119]
  - Don't crash if 'galleries', 'chapters', 'old-reports', 'old-articles' not found [thuliper]
  - List old articles (related to http://eea.europa.eu/publications/signals-2009) [thuliper]
  - Use translated objects for 'chapters' and 'galleries' folders so that these does not have to be named the same [thuliper]
