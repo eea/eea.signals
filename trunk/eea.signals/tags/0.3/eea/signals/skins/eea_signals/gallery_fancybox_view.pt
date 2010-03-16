@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      i18n:domain="plone">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/base.css"/>
+    <link rel="stylesheet" type="text/css" href="/galleryview/galleryview.css"/>
+    <script type="text/javascript" src="++resource++jquery-1.3.2.js"></script>
+    <script type="text/javascript" src="/galleryview/jquery.timers-1.1.2.js"></script>
+    <script type="text/javascript" src="/galleryview/jquery.galleryview-2.0.js"></script>
+    <script type="text/javascript" src="/eea-galleryview.js"></script>
+</head>
+
+<body class="gallery_fancybox_view">
+        <metal:listingmacro define-macro="listing">
+        <tal:foldercontents define="contentFilter contentFilter|request/contentFilter|nothing;
+                            limit_display limit_display|request/limit_display|nothing;
+                            more_url more_url|request/more_url|string:folder_contents;
+                            contentsMethod python:test(here.portal_type in ['Topic','RichTopic'], here.queryCatalog, here.getFolderContents);
+                            folderContents folderContents|python:contentsMethod(contentFilter, batch=True);
+                            over_limit python: limit_display and len(folderContents) > limit_display;
+                            folderContents python: (over_limit and folderContents[:limit_display]) or folderContents;
+                            batch folderContents">
+        <tal:listing condition="folderContents">
+
+            <ul id="galleryView">
+                <tal:entry tal:repeat="item folderContents">            
+                    <tal:block tal:define="item_id item/getId|item/id;
+                                           item_title_or_id item/pretty_title_or_id;
+                                           item_description item/Description;
+                                           item_type item/portal_type;
+                                           item_type_title item/Type;
+                                           item_modified item/ModificationDate;
+                                           item_created item/CreationDate;
+                                           item_published item/EffectiveDate|item/getEffectiveDate;
+                                           item_wf_state        item/review_state|python: wtool.getInfoFor(item, 'review_state', '');
+                                           item_creator item/Creator;
+                                           item_start item/start/ISO|item/StartDate|nothing;
+                                           item_end item/end/ISO|item/EndDate|nothing;
+                                           item_object item/getObject;
+                                           item_copyright item_object/Rights;
+                                           urlview item_object/@@url;
+                                           item_absolute_url item_object/absolute_url;
+                                           item_url urlview/listing_url;
+                                           item_css_class urlview/css_class;
+                                       ">
+                        <li>
+                            <span tal:condition="item_copyright" class="panel-overlay">
+                                <tal:description tal:replace="item_description">[item_description]</tal:description>
+                                &copy;
+                                <tal:image i18n:translate="Image">Image</tal:image>:
+                                <tal:copyright tal:replace="item_copyright">Copyrighter</tal:copyright>
+                            </span>
+                            <span tal:condition="not:item_copyright" class="panel-overlay" tal:content="item_description">[item_description]</span>
+                            <span class="panel-overlay" tal:content="item_description">[item_description]</span>
+                            <img tal:attributes="src string:${item_absolute_url}/image_large" />
+                        </li>
+                    </tal:block>
+                </tal:entry>
+            </ul>
+
+        </tal:listing>
+        </tal:foldercontents>
+        </metal:listingmacro>
+</body>
+</html>

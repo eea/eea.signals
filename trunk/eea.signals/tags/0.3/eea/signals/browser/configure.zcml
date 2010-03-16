@@ -1,0 +1,12 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser">
+
+  <browser:page
+    for=".interfaces.ISignalsView"
+    name="signals_view"
+    class=".signals_view.SignalsView"
+    template="signals_view.pt"
+    permission="zope.Public"
+    />
+
+</configure>
