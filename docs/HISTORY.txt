@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.3 (Unreleased)
+0.3 (2010-03-16)
 ----------------
 
  - Include copyright in gallery view images if there is one [thuliper, #3119]
