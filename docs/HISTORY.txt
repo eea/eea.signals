@@ -1,12 +1,11 @@
 Changelog
 =========
 
-0.4 (Unreleased)
-----------------
+0.4-dev - (unreleased)
+----------------------
 
 0.3 (2010-03-16)
 ----------------
-
  - Include copyright in gallery view images if there is one [thuliper, #3119]
  - Don't crash if 'galleries', 'chapters', 'old-reports', 'old-articles' not found [thuliper]
  - List old articles (related to http://eea.europa.eu/publications/signals-2009) [thuliper]
@@ -14,7 +13,6 @@ Changelog
 
 0.2 (2010-03-08)
 ----------------
-
  - Use folders for articles/eyewitness sections so that it's easier to translate [thuliper, #3041]
  - New Eyewitness story icon for CMS [thuliper]
  - Eyewitness stories opens in fancybox [thuliper, #3008]
@@ -22,5 +20,4 @@ Changelog
 
 0.1 (2010-02-16)
 ----------------
-
 - Initial release
