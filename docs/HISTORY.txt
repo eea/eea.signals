@@ -1,6 +1,9 @@
 Changelog
 =========
 
+0.6-dev - (unreleased)
+----------------------
+
 0.5 - (2011-02-01)
 ------------------
  - Bug fix: Added tests framework for hudson [voineali]
