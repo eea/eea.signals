@@ -45,13 +45,14 @@
                                            item_css_class urlview/css_class;
                                        ">
                         <li>
-                            <span tal:condition="item_copyright" class="panel-overlay">
+                            <span tal:condition="item_copyright" class="panel-overlay" style="overflow:hidden">
                                 <tal:description tal:replace="item_description">[item_description]</tal:description>
                                 &copy;
                                 <tal:image i18n:translate="Image">Image</tal:image>:
                                 <tal:copyright tal:replace="item_copyright">Copyrighter</tal:copyright>
                             </span>
-                            <span tal:condition="not:item_copyright" class="panel-overlay" tal:content="item_description">[item_description]</span>
+                            <span tal:condition="not:item_copyright" class="panel-overlay" style="overflow:hidden" 
+                              tal:content="item_description">[item_description]</span>
                             <span class="panel-overlay" tal:content="item_description">[item_description]</span>
                             <img tal:attributes="src string:${item_absolute_url}/image_large" />
                         </li>
