@@ -3,6 +3,7 @@ Changelog
 
 0.6-dev - (unreleased)
 ----------------------
+ * Bug fix: Fixed description display for fancybox gallery view in IE 8 [tiberich #4117]
 
 0.5 - (2011-02-01)
 ------------------
