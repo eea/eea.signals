@@ -1,11 +1,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       lang="en"
-      i18n:domain="plone">
+      i18n:domain="eea">
 
 <head>
     <link rel="stylesheet" type="text/css" href="/base.css"/>
     <link rel="stylesheet" type="text/css" href="++resource++jquery.galleryview.css"/>
-    <script type="text/javascript" src="/++resource++jquery-1.3.2.js"></script>
     <script type="text/javascript" src="/++resource++jquery.timers.js"></script>
     <script type="text/javascript" src="/++resource++jquery.galleryview.js"></script>
     <script type="text/javascript" src="/eea-galleryview.js"></script>

@@ -1,8 +1,6 @@
+""" Signals View module
+"""
 from Products.Five import BrowserView
-from Products.CMFCore.utils import getToolByName
-from DateTime import DateTime
-
-
 
 class SignalsView(BrowserView):
     """ View to use within signals_view template.
@@ -16,13 +14,18 @@ class SignalsView(BrowserView):
     """
 
     def _get_translated_item(self, name):
+        """ Returns translated item if available
+        """
         context = self.context
         try:
-            return context.getCanonical().restrictedTraverse(name).getTranslations()[context.Language()][0]
-        except:
+            return context.getCanonical().restrictedTraverse(name) \
+                        .getTranslations()[context.Language()][0]
+        except Exception:
             return None
 
     def get_old_reports(self):
+        """ Returns folder named old-reports if available
+        """
         folder = self._get_translated_item('old-reports')
         if folder == None:
             return None
@@ -34,6 +37,8 @@ class SignalsView(BrowserView):
         }
 
     def get_old_articles(self):
+        """ Returns folder named old-articles if available
+        """
         folder = self._get_translated_item('old-articles')
         if folder == None:
             return None
@@ -45,6 +50,8 @@ class SignalsView(BrowserView):
         }
 
     def get_chapters(self):
+        """ Returns articles inside folder named chapters if available
+        """
         folder = self._get_translated_item('chapters')
         if folder == None:
             return None
@@ -63,11 +70,14 @@ class SignalsView(BrowserView):
         }
 
     def get_eyewitness_stories(self):
+        """ Returns eyewitnesstory's inside folder named galleries if available
+        """
         folder = self._get_translated_item('galleries')
         if folder == None:
             return None
         contents = []
-        for brain in folder.getFolderContents({'portal_type': ['EyewitnessStory']}):
+        for brain in folder.getFolderContents(
+                                    {'portal_type': ['EyewitnessStory']}):
             contents.append({
                 'title': brain.Title,
                 'description': brain.Description,
@@ -81,6 +91,8 @@ class SignalsView(BrowserView):
         }
 
     def get_more_info_document(self):
+        """ Returns what-is-signals document if available
+        """
         doc = self._get_translated_item('what-is-signals')
         if doc == None:
             return None

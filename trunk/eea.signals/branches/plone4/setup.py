@@ -1,3 +1,5 @@
+""" Setup module
+"""
 from setuptools import setup, find_packages
 import os
 from os.path import join
@@ -11,7 +13,6 @@ setup(name='eea.signals',
       description="",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Programming Language :: Python",
         ],

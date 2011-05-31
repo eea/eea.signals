@@ -5,7 +5,7 @@ from Products.PloneTestCase.layer import onsetup
 from Products.Five import zcml
 from Products.Five import fiveconfigure
 
-PRODUCTS = ['FiveSite', 'eea.signals']
+PRODUCTS = ['eea.signals']
 
 @onsetup
 def setup_eea_signals():
@@ -13,11 +13,9 @@ def setup_eea_signals():
     """
     fiveconfigure.debug_mode = True
     import Products.Five
-    import Products.FiveSite
     import eea.signals
     zcml.load_config('meta.zcml', Products.Five)
     zcml.load_config('configure.zcml', Products.Five)
-    zcml.load_config('configure.zcml', Products.FiveSite)
     zcml.load_config('configure.zcml', eea.signals)
     fiveconfigure.debug_mode = False
 

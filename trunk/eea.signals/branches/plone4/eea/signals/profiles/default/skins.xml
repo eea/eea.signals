@@ -16,12 +16,10 @@
    of your product (on the filesystem) as Filesystem Directory Views within the
    portal_skins tool, so that they become usable as skin layers. -->
  <object name="eea_signals" meta_type="Filesystem Directory View"
-     directory="signals/skins/eea_signals"/>
+     directory="eea.signals:skins/eea_signals"/>
 
- <skin-path name="EEADesign2006">
+ <skin-path name="*">
   <layer name="eea_signals" insert-after="custom" />
  </skin-path>
- <skin-path name="Plone Default">
-  <layer name="eea_signals" insert-after="eeadesign2006_js" />
- </skin-path>
+
 </object>
