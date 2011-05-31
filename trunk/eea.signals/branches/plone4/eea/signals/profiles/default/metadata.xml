@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<metadata>
+   <description>EEA Signals profile</description>
+   <version>4.0</version>
+   <dependencies>
+
+        <dependency>profile-eea.jquery:default</dependency>
+
+    </dependencies>
+</metadata>
+
+
+

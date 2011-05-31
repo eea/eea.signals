@@ -26,6 +26,7 @@ setup(name='eea.signals',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'eea.jquery'
           # -*- Extra requirements: -*-
       ],
       entry_points="""

@@ -1,5 +1,8 @@
 Changelog
 =========
+4.0-dev - (unreleased)
+----------------------
+ * Feature: ported package to plone 4.0.4 [ichimdav #4304] 
 
 0.7-dev - (unreleased)
 ----------------------
