@@ -27,7 +27,8 @@ setup(name='eea.signals',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'eea.jquery'
+          'eea.jquery',
+          'Products.LinguaPlone'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
