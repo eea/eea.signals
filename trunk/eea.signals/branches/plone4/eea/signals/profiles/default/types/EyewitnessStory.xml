@@ -42,9 +42,4 @@
   <permission value="Modify portal content"/>
   <permission value="Review portal content"/>
  </action>
- <action title="Folder Listing" action_id="folderlisting" category="folder"
-    condition_expr="object/isPrincipiaFolderish"
-    url_expr="string:${folder_url}/view" visible="False">
-  <permission value="View"/>
- </action>
 </object>

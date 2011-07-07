@@ -2,12 +2,10 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            i18n_domain="eea">
 
-  <browser:page
-    for=".interfaces.ISignalsView"
-    name="signals_view"
-    class=".signals_view.SignalsView"
-    template="signals_view.pt"
-    permission="zope.Public"
-    />
+  <browser:page for=".interfaces.ISignalsView"
+                name="signals_view"
+                class=".signals_view.SignalsView"
+                template="signals_view.pt"
+                permission="zope.Public" />
 
 </configure>

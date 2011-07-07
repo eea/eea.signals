@@ -1,8 +1,18 @@
 Changelog
 =========
+
+
 4.0-dev - (unreleased)
 ----------------------
- * Feature: ported package to plone 4.0.4 [ichimdav #4304] 
+
+* TODO: fix remaining plone4 TODOs
+
+* Feature: Added upgrade steps
+  [voineali #4392]
+
+* Feature: Plone 4.x compatible release
+  [ichimdav #4304]
+
 
 0.7-dev - (unreleased)
 ----------------------
