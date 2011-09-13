@@ -3,7 +3,7 @@
 <object name="portal_javascripts" meta_type="JavaScripts Registry">
     <javascript cacheable="True" compression="safe" cookable="True"
         enabled="True" expression="" id="eea-galleryview.js" inline="False"
-        position-after="iefixes.js"/>
+        position-after="eea-autoscroll.js"/>
 
 </object>
 
