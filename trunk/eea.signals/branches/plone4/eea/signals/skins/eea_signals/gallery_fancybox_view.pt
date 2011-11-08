@@ -2,12 +2,14 @@
       lang="en"
       i18n:domain="eea">
 
-<head>
-    <link rel="stylesheet" type="text/css" href="/base.css"/>
-    <link rel="stylesheet" type="text/css" href="++resource++jquery.galleryview.css"/>
-    <script type="text/javascript" src="/++resource++jquery.timers.js"></script>
-    <script type="text/javascript" src="/++resource++jquery.galleryview.js"></script>
-    <script type="text/javascript" src="/eea-galleryview.js"></script>
+<head tal:define="portal_state context/@@plone_portal_state;
+    portal_url portal_state/portal_url;">
+    <link rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/base.css"/>
+    <link rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/++resource++jquery.galleryview.css"/>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/jquery.js"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++jquery.timers.js"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++jquery.galleryview.js"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/eea-galleryview.js"></script>
 </head>
 
 <body class="gallery_fancybox_view">
