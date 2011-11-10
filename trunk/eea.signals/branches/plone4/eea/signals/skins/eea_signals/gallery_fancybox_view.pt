@@ -28,7 +28,7 @@
                 <tal:entry tal:repeat="item folderContents">            
                     <tal:block tal:define="item_id item/getId|item/id;
                                            item_title_or_id item/pretty_title_or_id;
-                                           item_description item/Description;
+                                           item_description python:item.Description or context.Description() or context.aq_parent.Description();
                                            item_type item/portal_type;
                                            item_type_title item/Type;
                                            item_modified item/ModificationDate;
@@ -52,9 +52,9 @@
                                 <tal:image i18n:translate="Image">Image</tal:image>:
                                 <tal:copyright tal:replace="item_copyright">Copyrighter</tal:copyright>
                             </span>
-                            <span tal:condition="not:item_copyright" class="panel-overlay" style="overflow:hidden" 
-                              tal:content="item_description">[item_description]</span>
-                            <span class="panel-overlay" tal:content="item_description">[item_description]</span>
+                            <span tal:condition="not:item_copyright" class="panel-overlay" style="overflow:hidden">
+                                <tal:description tal:replace="item_description">[item_description]</tal:description>
+                            </span>
                             <img tal:attributes="src string:${item_absolute_url}/image_large" />
                         </li>
                     </tal:block>
