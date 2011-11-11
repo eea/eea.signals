@@ -5,8 +5,8 @@
 $(document).ready(function() {
     if ($.fn.galleryView !== undefined) {
         $('#galleryView').galleryView({
-            panel_width: 768,
-            panel_height: 511,
+            panel_width: 635,
+            panel_height: 423,
             frame_width: 50,
             frame_height: 50,
             transition_speed: 350,
