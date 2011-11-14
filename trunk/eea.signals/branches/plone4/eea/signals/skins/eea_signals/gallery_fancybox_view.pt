@@ -23,58 +23,7 @@
                             folderContents python: (over_limit and folderContents[:limit_display]) or folderContents;
                             batch folderContents">
         <tal:listing condition="folderContents">
-
-            <ul id="galleryView">
-                <tal:entry tal:repeat="item folderContents">            
-                    <tal:block tal:define="item_id item/getId|item/id;
-                                           item_title_or_id item/pretty_title_or_id;
-                                           item_description python:item.Description or context.Description() or context.aq_parent.Description();
-                                           item_type item/portal_type;
-                                           item_type_title item/Type;
-                                           item_modified item/ModificationDate;
-                                           item_created item/CreationDate;
-                                           item_published item/EffectiveDate|item/getEffectiveDate;
-                                           item_wf_state        item/review_state|python: wtool.getInfoFor(item, 'review_state', '');
-                                           item_creator item/Creator;
-                                           item_start item/start/ISO|item/StartDate|nothing;
-                                           item_end item/end/ISO|item/EndDate|nothing;
-                                           item_object item/getObject;
-                                           item_copyright item_object/Rights;
-                                           urlview item_object/@@url;
-                                           item_absolute_url item_object/absolute_url;
-                                           item_url urlview/listing_url;
-                                           item_css_class urlview/css_class;
-                                       ">
-                        <li>
-                            <span tal:condition="item_copyright" class="panel-overlay">
-                                <tal:description tal:replace="item_description">[item_description]</tal:description>
-                                &copy;
-                                <tal:image i18n:translate="Image">Image</tal:image>:
-                                <tal:copyright tal:replace="item_copyright">Copyrighter</tal:copyright>
-                                <a tal:attributes="href string:${item_absolute_url}/image_view_fullscreen" i18n:translate="label_click_to_view_full_image" target="_blank">
-                                    Click to view full-size image&hellip;
-                                <span tal:define="size python:context.getObjSize(item_object)"
-                                      tal:content="size">
-                                    File size
-                                </span>
-                                </a>
-                            </span>
-                            <span tal:condition="not:item_copyright" class="panel-overlay">
-                                <tal:description tal:replace="item_description">[item_description]</tal:description>
-                                <a tal:attributes="href string:${item_absolute_url}/image_view_fullscreen" i18n:translate="label_click_to_view_full_image" target="_blank">
-                                    Click to view full-size image&hellip;
-                                <span tal:define="size python:context.getObjSize(item_object)"
-                                      tal:content="size">
-                                    File size
-                                </span>
-                                </a>
-                            </span>
-                            <img tal:attributes="src string:${item_absolute_url}/image_large" />
-                        </li>
-                    </tal:block>
-                </tal:entry>
-            </ul>
-
+            <metal:gallery_view use-macro="here/gallery_view/macros/galleryview" />
         </tal:listing>
         </tal:foldercontents>
         </metal:listingmacro>
