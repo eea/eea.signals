@@ -3,6 +3,8 @@ Changelog
 
 4.2-dev - (unreleased)
 ----------------------
+ * Change: made the gallery_view player smaller to fit in 1024px layout
+   [ichimdav #4842]
 
 4.1 - (2011-11-18)
 ------------------
