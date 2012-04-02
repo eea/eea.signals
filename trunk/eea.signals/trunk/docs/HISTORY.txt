@@ -3,6 +3,8 @@ Changelog
 
 4.4-dev - (unreleased)
 ----------------------
+ * Bug fix: append a image scale to the galleryView images if one is not provided
+   like in the example from design-elements [ichimdav #5055]
 
 4.3 - (2012-02-15)
 ------------------
