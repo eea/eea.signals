@@ -14,15 +14,9 @@ $(document).ready(function() {
 
             parent_width = $gallery_parent.width() - 10;
             parent_height = Math.round((parent_width /4)*3);
-            gallery_width = $gallery_class === 'gallery_fancybox_view' ? 630 : parent_width;
+            gallery_width = $gallery_class === 'gallery_fancybox_view' ? 640 : parent_width;
             gallery_height = $gallery_class === 'gallery_fancybox_view' ? 433 : parent_height;
-            $gallery_view.find('img').each(function(e, el){
-                var src = el.src;
-                if( src.indexOf('image_') === -1 ) {
-                    el.src = src + '/image_large';
-                }
-            });
-            $gallery_view.galleryView({
+            $('#galleryView').galleryView({
                 panel_width: gallery_width,
                 panel_height: gallery_height,
                 frame_width: 50,
