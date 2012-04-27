@@ -6,6 +6,9 @@ Changelog
 
 4.4 - (2012-04-27)
 ------------------
+ * Change: reversed changes brought to signals since a better
+   fix was done to the design_elments page from eea.design
+   [ichimdav refs #5055]
 
 4.3 - (2012-02-15)
 ------------------
