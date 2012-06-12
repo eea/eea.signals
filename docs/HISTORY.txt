@@ -1,18 +1,18 @@
 ﻿Changelog
 =========
 
-4.5-dev* (unreleased)
+4.5-dev - (unreleased)
 ----------------------
 * Bug fix: fixed markup of HISTORY.txt file
   [ciobabog refs #5231]
 
-4.4* (2012-04-27)
+4.4 - (2012-04-27)
 ------------------
 * Change: reversed changes brought to signals since a better
   fix was done to the design_elments page from eea.design
   [ichimdav refs #5055]
 
-4.3* (2012-02-15)
+4.3 - (2012-02-15)
 ------------------
 * Change: use the dimensions of the parent and have the
   ratio of the player be of 4:3
@@ -23,39 +23,32 @@
 * Change: made the gallery_view player smaller to fit in 1024px layout
   [ichimdav #4842]
 
-4.1* (2011-11-18)
+4.1 - (2011-11-18)
 ------------------
-* Rerelease broken egg  
-
-4.0* (2011-11-18)
-------------------
-* TODO: fix remaining plone4 TODOs
+* Plone 4 release.  
 * Feature: Added upgrade steps
   [voineali #4392]
 * Feature: Plone 4.x compatible release
   [ichimdav #4304]
-
-0.7-dev* (unreleased)
-----------------------
 * Bug fix: Added translation domain to ZCML files
   [voineali #4139]
 
-0.6* (2011-02-10)
+0.6 - (2011-02-10)
 ------------------
 * Bug fix: Fixed description display for fancybox gallery view in IE 8
   [tiberich #4117]
 
-0.5* (2011-02-01)
+0.5 - (2011-02-01)
 ------------------
 * Bug fix: Added tests framework for hudson
   [voineali]
 
-0.4* (2010-10-25)
+0.4 - (2010-10-25)
 ----------------------
 * Fix broken js/css links in slideshow popup
   [thuliper, #3661]
 
-0.3 (2010-03-16)
+0.3 - (2010-03-16)
 ----------------
 * Include copyright in gallery view images if there is one
   [thuliper, #3119]
@@ -66,7 +59,7 @@
 * Use translated objects for 'chapters' and 'galleries' folders so that these does not have to be named the same
   [thuliper]
 
-0.2 (2010-03-08)
+0.2 - (2010-03-08)
 ----------------
 * Use folders for articles/eyewitness sections so that it's easier to translate
   [thuliper, #3041]
