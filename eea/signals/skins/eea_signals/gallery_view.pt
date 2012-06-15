@@ -64,10 +64,10 @@
                                        ">
                         <li>
                             <span tal:condition="item_copyright" class="panel-overlay">
-                                <tal:description tal:replace="item_description">[item_description]</tal:description>
+                                <span tal:replace="item_description" />
                                 &copy;
                                 <tal:image i18n:translate="Image">Image</tal:image>:
-                                <tal:copyright tal:replace="item_copyright">Copyrighter</tal:copyright>
+                                <span tal:replace="item_copyright" />
                                 <a tal:attributes="href string:${item_absolute_url}/image_view_fullscreen" i18n:translate="label_click_to_view_full_image" target="_blank">
                                     Click to view full-size image&hellip;
                                 <span tal:define="size python:context.getObjSize(item_object)"
@@ -77,7 +77,7 @@
                                 </a>
                             </span>
                             <span tal:condition="not:item_copyright" class="panel-overlay">
-                                <tal:description tal:replace="item_description">[item_description]</tal:description>
+                                <span tal:replace="item_description" />
                                 <a tal:attributes="href string:${item_absolute_url}/image_view_fullscreen" i18n:translate="label_click_to_view_full_image" target="_blank">
                                     Click to view full-size image&hellip;
                                 <span tal:define="size python:context.getObjSize(item_object)"
