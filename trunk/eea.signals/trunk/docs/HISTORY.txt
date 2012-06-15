@@ -3,6 +3,8 @@
 
 4.6-dev - (unreleased)
 ----------------------
+* Bug Fix: Fixed i18n missing tags in eea.signals 
+  [prospchr refs #5162]
 
 4.5 - (2012-06-12)
 ------------------
