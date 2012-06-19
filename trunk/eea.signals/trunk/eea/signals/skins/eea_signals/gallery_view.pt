@@ -11,11 +11,9 @@
         normalizeString nocall:plone_view/normalizeString;
         toLocalizedTime nocall:plone_view/toLocalizedTime;
         isAnon context/@@plone_portal_state/anonymous;
-        isEmpty context/@@plone_context_state/is_empty;
         ">
         
-        <!--Note: #plone4 is_empty is now added by EEAPloneAdmin -->
-      <tal:isEmpty tal:condition="python: isEmpty and isAnon and len(context.getTranslations()) &gt; 1">
+      <tal:isEmpty tal:condition="python: isAnon and len(context.getTranslations()) &gt; 1">
          <tal:redirect tal:define="dummy python: request.RESPONSE.redirect(here_url + '/not_available_lang')" />
       </tal:isEmpty>
 
