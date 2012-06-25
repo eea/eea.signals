@@ -3,6 +3,8 @@
 
 4.7-dev - (unreleased)
 ----------------------
+* Bug fix: removed usage of is_empty
+  [demarant refs #5289, fixes #5311]
 
 4.6 - (2012-06-20)
 ------------------
