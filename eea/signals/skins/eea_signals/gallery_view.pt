@@ -13,10 +13,6 @@
         isAnon context/@@plone_portal_state/anonymous;
         ">
         
-      <tal:isEmpty tal:condition="python: isAnon and len(context.getTranslations()) &gt; 1">
-         <tal:redirect tal:define="dummy python: request.RESPONSE.redirect(here_url + '/not_available_lang')" />
-      </tal:isEmpty>
-
         <div class="visualClear"></div>
 
         <a href=""
