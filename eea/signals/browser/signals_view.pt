@@ -81,7 +81,7 @@
             </div>
 
             <div class="signals-section">
-                <h2 i18n:translate="box_morelink">More</h2>
+                <h2 i18n:translate="">More</h2>
                 <ul>
                     <li>
                        <a tal:condition="more_document"
