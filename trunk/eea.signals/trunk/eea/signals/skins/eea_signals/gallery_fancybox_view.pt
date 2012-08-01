@@ -6,7 +6,8 @@
     portal_url portal_state/portal_url;">
     <link rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/base.css"/>
     <link rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/++resource++jquery.galleryview.css"/>
-    <script type="text/javascript" tal:attributes="src string:${portal_url}/jquery.js"></script>
+    <script type="text/javascript" tal:condition="exists:here/jquery.js" src="jquery.js"></script>
+    <script type="text/javascript" tal:condition="exists:here/++resource++plone.app.jquery.js" src="++resource++plone.app.jquery.js"></script>
     <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++jquery.timers.js"></script>
     <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++jquery.galleryview.js"></script>
     <script type="text/javascript" tal:attributes="src string:${portal_url}/eea-galleryview.js"></script>
