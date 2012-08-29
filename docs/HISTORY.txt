@@ -38,7 +38,7 @@
   ratio of the player be of 4:3
   [ichimdav #4842]
 
-4.2* (2012-01-03)
+4.2 - (2012-01-03)
 -----------------
 * Change: made the gallery_view player smaller to fit in 1024px layout
   [ichimdav #4842]
@@ -90,7 +90,7 @@
 * Link to previous signal reports
   [thuliper, #3010]
 
-0.1 (2010-02-16)
-----------------
+0.1 - (2010-02-16)
+------------------
 - Initial release
 
