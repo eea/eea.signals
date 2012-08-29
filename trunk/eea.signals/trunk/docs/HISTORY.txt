@@ -39,7 +39,7 @@
   [ichimdav #4842]
 
 4.2 - (2012-01-03)
------------------
+------------------
 * Change: made the gallery_view player smaller to fit in 1024px layout
   [ichimdav #4842]
 
