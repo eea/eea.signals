@@ -39,7 +39,7 @@
   [ichimdav #4842]
 
 4.2* (2012-01-03)
-------------------
+-----------------
 * Change: made the gallery_view player smaller to fit in 1024px layout
   [ichimdav #4842]
 
@@ -64,12 +64,12 @@
   [voineali]
 
 0.4 - (2010-10-25)
-----------------------
+------------------
 * Fix broken js/css links in slideshow popup
   [thuliper, #3661]
 
 0.3 - (2010-03-16)
-----------------
+------------------
 * Include copyright in gallery view images if there is one
   [thuliper, #3119]
 * Don't crash if 'galleries', 'chapters', 'old-reports', 'old-articles' not found
@@ -80,7 +80,7 @@
   [thuliper]
 
 0.2 - (2010-03-08)
-----------------
+------------------
 * Use folders for articles/eyewitness sections so that it's easier to translate
   [thuliper, #3041]
 * New Eyewitness story icon for CMS
