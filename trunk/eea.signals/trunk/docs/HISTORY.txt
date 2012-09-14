@@ -3,6 +3,9 @@
 
 4.9-dev - (unreleased)
 ----------------------
+* Feature: turned the galleryView customization into a jquery plugin so it can
+  be called at any time
+  [ichimdav #5463]
 
 4.8 - (2012-08-27)
 ------------------
