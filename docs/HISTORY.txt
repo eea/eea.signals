@@ -1,8 +1,8 @@
 ﻿Changelog
 =========
 
-4.9-dev - (unreleased)
-----------------------
+4.9 - (2012-11-22)
+------------------
 * Feature: turned the galleryView customization into a jquery plugin so it can
   be called at any time
   [ichimdav #5463]
