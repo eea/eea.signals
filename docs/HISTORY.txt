@@ -22,7 +22,7 @@ Changelog
 
 4.6 - (2012-06-20)
 ------------------
-* Bug Fix: Fixed i18n missing tags in eea.signals 
+* Bug Fix: Fixed i18n missing tags in eea.signals
   [prospchr refs #5162]
 * Bug fix: removed usage of is_empty
   [tiberich refs #5289]
@@ -51,7 +51,7 @@ Changelog
 
 4.1 - (2011-11-18)
 ------------------
-* Plone 4 release.  
+* Plone 4 release.
 * Feature: Added upgrade steps
   [voineali #4392]
 * Feature: Plone 4.x compatible release
