@@ -1,0 +1,107 @@
+Changelog
+=========
+
+5.0 - (2015-03-17)
+------------------
+* Change: Switched to curl in the jenkins build install script
+  [olimpiurob refs #22402]
+* Change: Changed fetch url for jenkins build install script to the install 
+  script from the main EEA CPB repository
+  [olimpiurob refs #22402]
+
+4.9 - (2012-11-22)
+------------------
+* Feature: turned the galleryView customization into a jquery plugin so it can
+  be called at any time
+  [ichimdav #5463]
+
+4.8 - (2012-08-27)
+------------------
+* Bug fix: reference jquery.js in a way that is compatible also with Plone 4.2
+  [ichimdav #5398]
+
+4.7 - (2012-07-13)
+------------------
+* Bug fix: removed usage of is_empty
+  [demarant refs #5289, fixes #5311]
+
+4.6 - (2012-06-20)
+------------------
+* Bug Fix: Fixed i18n missing tags in eea.signals
+  [prospchr refs #5162]
+* Bug fix: removed usage of is_empty
+  [tiberich refs #5289]
+
+4.5 - (2012-06-12)
+------------------
+* Bug fix: fixed markup of HISTORY.txt file
+  [ciobabog refs #5231]
+
+4.4 - (2012-04-27)
+------------------
+* Change: reversed changes brought to signals since a better
+  fix was done to the design_elments page from eea.design
+  [ichimdav refs #5055]
+
+4.3 - (2012-02-15)
+------------------
+* Change: use the dimensions of the parent and have the
+  ratio of the player be of 4:3
+  [ichimdav #4842]
+
+4.2 - (2012-01-03)
+------------------
+* Change: made the gallery_view player smaller to fit in 1024px layout
+  [ichimdav #4842]
+
+4.1 - (2011-11-18)
+------------------
+* Plone 4 release.
+* Feature: Added upgrade steps
+  [voineali #4392]
+* Feature: Plone 4.x compatible release
+  [ichimdav #4304]
+* Bug fix: Added translation domain to ZCML files
+  [voineali #4139]
+
+0.6 - (2011-02-10)
+------------------
+* Bug fix: Fixed description display for fancybox gallery view in IE 8
+  [tiberich #4117]
+
+0.5 - (2011-02-01)
+------------------
+* Bug fix: Added tests framework for hudson
+  [voineali]
+
+0.4 - (2010-10-25)
+------------------
+* Fix broken js/css links in slideshow popup
+  [thuliper, #3661]
+
+0.3 - (2010-03-16)
+------------------
+* Include copyright in gallery view images if there is one
+  [thuliper, #3119]
+* Don't crash if 'galleries', 'chapters', 'old-reports', 'old-articles' not found
+  [thuliper]
+* List old articles (related to http://eea.europa.eu/publications/signals-2009)
+  [thuliper]
+* Use translated objects for 'chapters' and 'galleries' folders so that these does not have to be named the same
+  [thuliper]
+
+0.2 - (2010-03-08)
+------------------
+* Use folders for articles/eyewitness sections so that it's easier to translate
+  [thuliper, #3041]
+* New Eyewitness story icon for CMS
+  [thuliper]
+* Eyewitness stories opens in fancybox
+  [thuliper, #3008]
+* Link to previous signal reports
+  [thuliper, #3010]
+
+0.1 - (2010-02-16)
+------------------
+- Initial release
+

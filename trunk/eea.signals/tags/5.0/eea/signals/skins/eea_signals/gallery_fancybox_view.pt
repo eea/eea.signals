@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      i18n:domain="eea">
+
+<head tal:define="portal_state context/@@plone_portal_state;
+    portal_url portal_state/portal_url;">
+    <link rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/base.css"/>
+    <link rel="stylesheet" type="text/css" tal:attributes="href string:${portal_url}/++resource++jquery.galleryview.css"/>
+    <script type="text/javascript" tal:condition="exists:here/jquery.js" tal:attributes="src string:${portal_url}/jquery.js"></script>
+    <script type="text/javascript" tal:condition="exists:here/++resource++plone.app.jquery.js" tal:attributes="src string:${portal_url}/++resource++plone.app.jquery.js"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++jquery.timers.js"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++jquery.galleryview.js"></script>
+    <script type="text/javascript" tal:attributes="src string:${portal_url}/eea-galleryview.js"></script>
+</head>
+
+<body class="gallery_fancybox_view">
+        <metal:listingmacro define-macro="listing">
+        <tal:foldercontents define="contentFilter contentFilter|request/contentFilter|nothing;
+                            limit_display limit_display|request/limit_display|nothing;
+                            more_url more_url|request/more_url|string:folder_contents;
+                            contentsMethod python:test(here.portal_type in ['Topic'], here.queryCatalog, here.getFolderContents);
+                            folderContents folderContents|python:contentsMethod(contentFilter, batch=True);
+                            over_limit python: limit_display and len(folderContents) > limit_display;
+                            folderContents python: (over_limit and folderContents[:limit_display]) or folderContents;
+                            batch folderContents">
+        <tal:listing condition="folderContents">
+            <metal:gallery_view use-macro="here/gallery_view/macros/galleryview" />
+        </tal:listing>
+        </tal:foldercontents>
+        </metal:listingmacro>
+</body>
+</html>
