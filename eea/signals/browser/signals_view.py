@@ -2,6 +2,7 @@
 """
 from Products.Five import BrowserView
 
+
 class SignalsView(BrowserView):
     """ View to use within signals_view template.
 
@@ -27,7 +28,7 @@ class SignalsView(BrowserView):
         """ Returns folder named old-reports if available
         """
         folder = self._get_translated_item('old-reports')
-        if folder == None:
+        if folder is None:
             return None
         return {
             'folder_title': folder.Title(),
@@ -40,7 +41,7 @@ class SignalsView(BrowserView):
         """ Returns folder named old-articles if available
         """
         folder = self._get_translated_item('old-articles')
-        if folder == None:
+        if folder is None:
             return None
         return {
             'folder_title': folder.Title(),
@@ -53,7 +54,7 @@ class SignalsView(BrowserView):
         """ Returns articles inside folder named chapters if available
         """
         folder = self._get_translated_item('chapters')
-        if folder == None:
+        if folder is None:
             return None
         contents = []
         for brain in folder.getFolderContents({'portal_type': ['Article']}):
@@ -73,7 +74,7 @@ class SignalsView(BrowserView):
         """ Returns eyewitnesstory's inside folder named galleries if available
         """
         folder = self._get_translated_item('galleries')
-        if folder == None:
+        if folder is None:
             return None
         contents = []
         for brain in folder.getFolderContents(
@@ -94,7 +95,7 @@ class SignalsView(BrowserView):
         """ Returns what-is-signals document if available
         """
         doc = self._get_translated_item('what-is-signals')
-        if doc == None:
+        if doc is None:
             return None
         return {
             'title': doc.Title(),
