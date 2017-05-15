@@ -102,4 +102,3 @@ class SignalsView(BrowserView):
             'description': doc.Description(),
             'url': doc.absolute_url(),
         }
-
