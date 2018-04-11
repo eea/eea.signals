@@ -24,7 +24,7 @@ $(document).ready(function() {
                 panel_height: gallery_height,
                 show_filmstrip: true,
                 show_filmstrip_nav: true,
-                fade_panel: false,
+                fade_panels: false,
                 frame_width: 50,
                 frame_height: 50,
                 transition_speed: 350,
