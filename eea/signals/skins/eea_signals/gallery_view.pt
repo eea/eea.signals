@@ -80,7 +80,7 @@
                                 </span>
                                 </a>
                             </span>
-                            <img tal:attributes="src string:${item_absolute_url}/image_large" />
+                            <img tal:attributes="src string:${item_absolute_url}/image_large" class="skip_lazy" />
                         </li>
                     </tal:block>
                 </tal:entry>
