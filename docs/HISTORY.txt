@@ -1,7 +1,7 @@
 Changelog
 =========
 
-5.5.dev0 - (unreleased)
+5.5 - (2018-04-12)
 -----------------------
 * Bug fix: avoid gallery photo hiding when clicking on gallery thumbnail
   [ichim-david refs #94172]
