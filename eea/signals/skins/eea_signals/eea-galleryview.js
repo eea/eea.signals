@@ -40,10 +40,11 @@ $(document).ready(function() {
         $("#galleryView, .galleryView").each(function(idx, el){
             var opts = {};
             if (el.className.indexOf('js-noFilmstrip') !== -1) {
-                opts.show_filmstrip = false;
-                opts.show_filmstrip_nav = false;
+                opts['show_filmstrip'] = false;
+                opts['show_filmstrip_nav'] = false;
             }
            $(el).eeaGalleryView(opts);
+            // $(el).eeaGalleryView();
         });
     }
 });
