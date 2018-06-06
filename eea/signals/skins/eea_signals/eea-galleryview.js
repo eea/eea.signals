@@ -44,6 +44,7 @@ $(document).ready(function() {
                 opts.show_filmstrip_nav = false;
             }
            $(el).eeaGalleryView(opts);
+            // $(el).eeaGalleryView();
         });
     }
 });

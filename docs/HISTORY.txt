@@ -1,6 +1,13 @@
 Changelog
 =========
 
+5.6 - (2018-06-04)
+---------------------
+* Feature: merged fixes from custom
+  [alecghica refs #95891]
+* Change: fixed jslint warnings
+  [alecghica refs #95891]
+
 5.5 - (2018-04-12)
 -----------------------
 * Bug fix: avoid gallery photo hiding when clicking on gallery thumbnail
@@ -129,4 +136,3 @@ Changelog
 0.1 - (2010-02-16)
 ------------------
 - Initial release
-
