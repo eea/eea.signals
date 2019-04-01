@@ -45,7 +45,12 @@
                     gal_opts.show_filmstrip_nav = false;
                     gal_opts.keep_nav_buttons_visible = true;
                 }
-                !$.isEmptyObject(gal_opts) ? $(el).eeaGalleryView(gal_opts) : $(el).eeaGalleryView();
+                if (!$.isEmptyObject(gal_opts)) {
+                    $(el).eeaGalleryView(gal_opts)
+                }
+                else {
+                    $(el).eeaGalleryView();
+                }
             });
         }
     });
