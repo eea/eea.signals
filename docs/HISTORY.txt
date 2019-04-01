@@ -3,6 +3,8 @@ Changelog
 
 5.9-dev0 - (unreleased)
 ---------------------
+* Bug fix: pass correct options when js-noFilmstrip is present
+  [ichim-david refs #104101]
 
 5.8 - (2019-01-28)
 ---------------------
