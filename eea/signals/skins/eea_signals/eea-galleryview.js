@@ -46,7 +46,7 @@
                     gal_opts.keep_nav_buttons_visible = true;
                 }
                 if (!$.isEmptyObject(gal_opts)) {
-                    $(el).eeaGalleryView(gal_opts)
+                    $(el).eeaGalleryView(gal_opts);
                 }
                 else {
                     $(el).eeaGalleryView();
