@@ -2,30 +2,30 @@ Changelog
 =========
 
 6.0-dev0 - (unreleased)
----------------------
+--------------------------
 * Change: signals_view photoAlbumEntry now uses a background image for better
   scaling
   [ichim-david refs #106884]
 
 5.9 - (2019-04-02)
----------------------
+--------------------------
 * Bug fix: pass correct options when js-noFilmstrip is present
   [ichim-david refs #104101]
 
 5.8 - (2019-01-28)
----------------------
+--------------------------
 * Jenkins: Add sonarqube step
   [avoinea refs #101552]
 
 5.7 - (2018-08-17)
----------------------
+--------------------------
 * Change: updated URLs pointing to eea.europa.eu with https://
   [alecghica refs #95849]
 * Bug fix: fixed templates display title for Folder
   [alecghica refs #97573]
 
 5.6 - (2018-06-04)
----------------------
+--------------------------
 * Feature: merged fixes from custom
   [alecghica refs #95891]
 * Change: fixed jslint warnings
