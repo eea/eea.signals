@@ -23,7 +23,7 @@
                     <div class="photoAlbumEntry" tal:repeat="item folderContents">
                         <a tal:attributes="href item/url; title item/description">
                             <span class="photoAlbumEntryWrapper">
-                                <img tal:attributes="src string:${item/url}/image_thumb"/>
+                                <span class="photoAlbumEntryWrapperImg lazy" tal:attributes="data-src string:${item/url}/image_mini"><!--?--></span>
                             </span>
                             <span class="photoAlbumEntryTitle" tal:content="item/title"></span>
                         </a>
@@ -39,7 +39,7 @@
                     <div class="photoAlbumEntry photoAlbumFolder" tal:repeat="item folderContents">
                         <a tal:attributes="href item/url; title item/title">
                             <span class="photoAlbumEntryWrapper">
-                                <img tal:attributes="src string:${item/url}/image_thumb"/>
+                                <span class="photoAlbumEntryWrapperImg lazy" tal:attributes="data-src string:${item/url}/image_mini"><!--?--></span>
                             </span>
                             <span class="photoAlbumEntryTitle" tal:content="item/title"></span>
                         </a>
@@ -55,7 +55,7 @@
                     <div class="photoAlbumEntry" tal:repeat="item folderContents">
                         <a tal:attributes="href item/getURL; title item/Description">
                             <span class="photoAlbumEntryWrapper">
-                                <img tal:attributes="src string:${item/getURL}/image_thumb"/>
+                                <span class="photoAlbumEntryWrapperImg lazy" tal:attributes="data-src string:${item/getURL}/image_mini"><!--?--></span>
                             </span>
                             <span class="photoAlbumEntryTitle" tal:content="item/Title"></span>
                         </a>
@@ -71,7 +71,7 @@
                     <div class="photoAlbumEntry" tal:repeat="item folderContents">
                         <a tal:attributes="href item/getURL; title item/Description">
                             <span class="photoAlbumEntryWrapper">
-                                <img tal:attributes="src string:${item/getURL}/image_thumb"/>
+                                <span class="photoAlbumEntryWrapperImg lazy" tal:attributes="data-src string:${item/getURL}/image_mini"><!--?--></span>
                             </span>
                             <span class="photoAlbumEntryTitle" tal:content="item/Title"></span>
                         </a>
