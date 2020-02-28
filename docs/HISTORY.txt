@@ -3,6 +3,8 @@ Changelog
 
 6.1-dev0 - (unreleased)
 ---------------------------
+* Change: reference jquery.js and jquery-migrate.js instead of resource variants
+  [ichim-david refs #105112]
 
 6.0 - (2019-08-16)
 --------------------------
