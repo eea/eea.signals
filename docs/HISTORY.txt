@@ -1,6 +1,11 @@
 Changelog
 =========
 
+6.1 - (2021-06-16)
+---------------------------
+* Change: reference jquery.js and jquery-migrate.js instead of resource variants
+  [ichim-david refs #105112]
+
 6.0 - (2019-08-16)
 --------------------------
 * Change: signals_view photoAlbumEntry now uses a background image for better
